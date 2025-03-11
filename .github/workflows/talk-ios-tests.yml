@@ -31,7 +31,7 @@ jobs:
 
     - uses: maxim-lobanov/setup-xcode@v1
       with:
-        xcode-version: 16.3.0
+        xcode-version: 16.3-beta
 
     - uses: actions/cache@v4
       with:
@@ -92,7 +92,7 @@ jobs:
 
     - uses: maxim-lobanov/setup-xcode@v1
       with:
-        xcode-version: 16.3.0
+        xcode-version: 16.3-beta
 
     - name: Set up php ${{ matrix.configs.phpversion }}
       uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401 # v2.32.0
