@@ -65,7 +65,7 @@ jobs:
 
   test:
     name: Test
-    runs-on: macos-15
+    runs-on: macos-15-xlarge
     needs: [build]
 
     strategy:
