@@ -4,25 +4,10 @@
 name: Build main target
 
 on:
-  pull_request:
-    paths:
-      - '.github/workflows/**'
-      - Podfile
-      - NextcloudTalk.xcodeproj/**
-      - NextcloudTalk/**
-      - NextcloudTalkTests/**
-      - NotificationServiceExtension/**
-      - ShareExtension/**
-      - BroadcastUploadExtension/**
-
-    push:
-      branches:
-        - main
-        - master
-        - stable*
+  workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.sha }}
   cancel-in-progress: true
 
 permissions:
