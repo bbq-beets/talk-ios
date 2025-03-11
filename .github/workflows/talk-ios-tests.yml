@@ -15,8 +15,8 @@ permissions:
 
 env:
   WORKSPACE: NextcloudTalk.xcworkspace
-  XCODE: 16.1
-  DESTINATION: platform=iOS Simulator,name=iPhone 16,OS=18.1
+  XCODE: 16.0
+  DESTINATION: platform=iOS Simulator,name=iPhone 16,OS=18.0
   SCHEME: NextcloudTalk
 
 jobs:
