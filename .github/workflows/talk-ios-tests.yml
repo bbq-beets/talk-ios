@@ -85,6 +85,12 @@ jobs:
         ]
 
     steps:
+    - name: Print out instance name  
+      run: |
+        INSTANCE_NAME=$(ls /usr/local/opt/runner/settings/instancename)
+        echo "Instance name: $INSTANCE_NAME"
+        echo "### $INSTANCE_NAME" >> $GITHUB_STEP_SUMMARY
+
     - name: Checkout app
       uses: actions/checkout@v4
       with:
