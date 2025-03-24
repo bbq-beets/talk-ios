@@ -15,7 +15,7 @@ permissions:
 
 env:
   WORKSPACE: NextcloudTalk.xcworkspace
-  XCODE: 16.3
+  XCODE: 16.3.0-beta
   DESTINATION: platform=iOS Simulator,name=iPhone 16,OS=18.4
   SCHEME: NextcloudTalk
 
@@ -44,7 +44,7 @@ jobs:
     - name: Setup Cocoapods
       uses: maxim-lobanov/setup-cocoapods@v1.4.0
       with:
-        version: 16.3-beta
+        version: latest
 
     - name: Set up dependencies talk-ios
       run: |
