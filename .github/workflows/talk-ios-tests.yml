@@ -173,9 +173,11 @@ jobs:
         -resultBundlePath 'testResult.xcresult'
 
     - name: Check memory pressure
+      if: always()
       run: sysctl vm.swapusage
 
     - name: Dump CoreSimulator logs
+      if: always()
       run: cat ~/Library/Logs/CoreSimulator/CoreSimulator.log
 
     - name: Upload test results
