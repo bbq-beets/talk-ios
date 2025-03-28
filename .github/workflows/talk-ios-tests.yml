@@ -15,14 +15,14 @@ permissions:
 
 env:
   WORKSPACE: NextcloudTalk.xcworkspace
-  XCODE: 16.1
-  DESTINATION: platform=iOS Simulator,name=iPhone 16,OS=18.1
+  XCODE: 16.3
+  DESTINATION: platform=iOS Simulator,name=iPhone 16,OS=18.4
   SCHEME: NextcloudTalk
 
 jobs:
   build:
     name: Build
-    runs-on: macos-15-xlarge
+    runs-on: macos-15
 
     steps:
     - name: Checkout app
@@ -58,7 +58,6 @@ jobs:
         -scheme '${{ env.SCHEME }}' \
         -destination '${{ env.DESTINATION }}' \
         -derivedDataPath 'DerivedData' \
-        CODE_SIGNING_ALLOWED=NO \
         | xcbeautify --quieter
 
     - name: Upload test build
@@ -70,7 +69,7 @@ jobs:
 
   test:
     name: Test
-    runs-on: macos-15-xlarge
+    runs-on: macos-15
     needs: [build]
 
     strategy:
@@ -163,7 +162,6 @@ jobs:
         -test-iterations 3 \
         -retry-tests-on-failure \
         -resultBundlePath 'testResult.xcresult' \
-        CODE_SIGNING_ALLOWED=NO
 
     - name: Upload test results
       uses: actions/upload-artifact@v4
