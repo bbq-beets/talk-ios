@@ -161,6 +161,10 @@ jobs:
     - name: Check memory pressure
       run: sysctl vm.swapusage
 
+    - uses: paveliak/profile-it@main
+      with:
+        name: ${{ matrix.configs.talkbranch }}-trace
+
     - name: Test NextcloudTalk iOS
       run: |
         set -o pipefail && \
