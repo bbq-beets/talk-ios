@@ -192,6 +192,10 @@ jobs:
       if: always()
       run: cat ~/Library/Logs/CoreSimulator/CoreSimulator.log
 
+    - name: Dump CoreSimulator logs
+      if: always()
+      run: cat ~/Library/Logs/CoreSimulator/*/system.log
+      
     - name: Upload test results
       uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
