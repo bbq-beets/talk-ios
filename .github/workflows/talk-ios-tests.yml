@@ -179,14 +179,10 @@ jobs:
     - name: Check memory pressure
       if: always()
       run: sysctl vm.swapusage
-
-    - name: Dump CoreSimulator logs
-      if: always()
-      run: ls -al /Library/Logs
       
     - name: Dump CoreSimulator logs
       if: always()
-      run: ls -al ~/Library/Logs
+      run: find ~/Library/Logs/CoreSimulator -type f
       
     - name: Dump CoreSimulator logs
       if: always()
