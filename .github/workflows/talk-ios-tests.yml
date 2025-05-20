@@ -195,6 +195,10 @@ jobs:
     - name: Dump CoreSimulator logs
       if: always()
       run: cat ~/Library/Logs/CoreSimulator/*/system.log
+
+    - name: Dump CoreSimulator logs
+      if: always()
+      run: xcrun simctl list devices -j
       
     - name: Upload test results
       uses: actions/upload-artifact@v4
