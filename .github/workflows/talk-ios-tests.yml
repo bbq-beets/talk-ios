@@ -15,8 +15,8 @@ permissions:
 
 env:
   WORKSPACE: NextcloudTalk.xcworkspace
-  XCODE: 16.2
-  DESTINATION: platform=iOS Simulator,name=iPhone 16,OS=18.2
+  XCODE: 26.0-beta
+  DESTINATION: platform=iOS Simulator,name=iPhone 26,OS=26.0-beta
   SCHEME: NextcloudTalk
 
 jobs:
@@ -34,6 +34,8 @@ jobs:
       with:
         xcode-version: ${{ env.XCODE }}
 
+    - run: xcodebuild -scheme '${{ env.SCHEME }}' -showdestinations
+  
     - uses: actions/cache@v4
       with:
         path: Pods
