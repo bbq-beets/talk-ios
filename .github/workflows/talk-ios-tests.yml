@@ -49,7 +49,7 @@ jobs:
 
     - run: diskutil info /
     
-    - run: xcrun simctl runtime delete com.apple.CoreSimulator.SimRuntime.iOS-26-0
+    - run: xcrun simctl runtime delete 23A5260l
 
     - run: diskutil info /
     
