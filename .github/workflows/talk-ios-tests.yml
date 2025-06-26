@@ -43,6 +43,10 @@ jobs:
     - run: xcodebuild -showsdks
 
     - run: diskutil info /
+
+    - run: xcrun simctl runtime delete com.apple.CoreSimulator.SimRuntime.iOS-26-0
+
+    - run: diskutil info /
     
     - run: xcodebuild -scheme '${{ env.SCHEME }}' -showdestinations
   
