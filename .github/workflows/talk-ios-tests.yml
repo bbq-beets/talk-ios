@@ -13,10 +13,11 @@ concurrency:
 permissions:
   contents: read
 
+#{ platform:iOS Simulator, arch:arm64, id:C1C1CCE9-CE80-4A89-A5D5-E91B03BD1610, OS:26.0, name:iPhone 16 Pro }
 env:
   WORKSPACE: NextcloudTalk.xcworkspace
   XCODE: 26.0-beta
-  DESTINATION: platform=iOS Simulator,name=iPhone 26,OS=26.0-beta
+  DESTINATION: platform=iOS Simulator,name=iPhone 16 Pro,OS=26.0
   SCHEME: NextcloudTalk
 
 jobs:
