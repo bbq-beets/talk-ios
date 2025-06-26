@@ -45,7 +45,7 @@ jobs:
 
     - run: diskutil info /
 
-    - run: xcrun simctl list runtimes
+    - run: xcrun simctl list runtimes -j
 
     - run: diskutil info /
     
